@@ -21,15 +21,35 @@ let consolePosts = () => {
 // this function creates elements inside the all-posts ul, then appends text inside it with the posts that were returned in the request.
 const displayPost = () => {
   const allPosts = document.getElementById('all-posts')
-  arrayOfPosts.map((post, index) => {
-    console.log("post and index",post,index)
+  arrayOfPosts.map((post,) => {
+    // console.log("post and index",post,index)
     const li = document.createElement('li')
-    const text = document.createTextNode(`#${index}, Title: ${post.name.title}:  First: ${post.name.first}, by user: ${post.name.last}`)
+    const text = document.createTextNode(`${post.name.title}: ${post.name.first}, ${post.name.last}`)
     li.appendChild(text)
     allPosts.append(li)
   })
 }
 
+const displayInfo = () => {
+  const allPosts = document.getElementById('all-posts')
+  arrayOfPosts.map((post) => {
+    // console.log("post and index",dob,location)
+    const li = document.createElement('li')
+    const text = document.createTextNode(` ${post.dob.date}, ${post.location.city}: ${post.location.state}, ${post.location.country}`)
+    li.appendChild(text)
+    allPosts.append(li)
+  })
+}
+
+const displayPhoto = () => {
+  const allPosts = document.getElementById('all-posts')
+  arrayOfPosts.map((post) => {
+    const li = document.createElement('li')
+    const text = document.createTextNode(` ${post.dob.date}, ${post.location.city}: ${post.location.state}, ${post.location.country}`)
+    li.appendChild(text)
+    allPosts.append(li)
+  })
+}
 
 
 
